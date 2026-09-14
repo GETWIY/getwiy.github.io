@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Getwiy — design tokens
+
+   Two themes, one component set. Every component is written once against
+   semantic variables, so a page can never mix two palettes by accident.
+   That mixing is exactly what made the first build look inconsistent.
+
+     .theme-dark   Getwiy — the parent brand. Gold, sampled from the logo.
+     .theme-light  Aqraez — the app's Bone & Burgundy, so the product page
+                   and its privacy/terms pages read as one thing.
+   ========================================================================== */
+
+.theme-dark {
+  --bg:         #08070A;
+  --bg-2:       #0E0B11;
+  --fg:         #EFE7DE;
+  --fg-soft:    rgba(239, 231, 222, 0.62);
+  --fg-faint:   rgba(239, 231, 222, 0.32);
+  --accent:     #ECC878;
+  --accent-2:   #B8873F;
+  --line:       rgba(239, 231, 222, 0.13);
+  --card-bg:    rgba(255, 255, 255, 0.035);
+  --card-line:  rgba(255, 255, 255, 0.10);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --glow:       rgba(236, 200, 120, 0.20);
+}
+
+.theme-light {
+  --bg:         #FAF6F2;
+  --bg-2:       #F3ECE7;
+  --fg:         #2A2126;
+  --fg-soft:    #6B5B63;
+  --fg-faint:   #9A8A92;
+  --accent:     #7A2048;
+  --accent-2:   #9C3D63;
+  --line:       #E4D8D0;
+  --card-bg:    #FFFFFFCC;
+  --card-line:  #E4D8D0;
+  --card-hover: #FFFFFF;
+  --glow:       rgba(122, 32, 72, 0.10);
+}
+
+:root {
+  /* The plaque behind the logo — the logo image carries this colour itself. */
+  --panel-core: #75132A;
+  --panel-edge: #67101F;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino,
+                  Georgia, "Times New Roman", serif;
+  --font-ui:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  --r-pill:  30px;
+  --r-input: 14px;
+  --r-card:  16px;
+  --r-panel: 18px;
+
+  --shell: 760px;
+}
