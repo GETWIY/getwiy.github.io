@@ -66,55 +66,151 @@ footer a{color:var(--accent)}
   .wrap{padding:34px 18px 64px}
   h1{font-size:27px}
 }
+/* --- added: In Short language picker --- */
+.picker{margin:0 0 18px}
+.picker label{
+  display:block; margin:0 0 7px; font-size:12px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); font-weight:600;
+}
+.picker select{
+  width:100%; max-width:320px; padding:11px 40px 11px 14px;
+  font:inherit; font-size:15.5px; color:var(--ink);
+  background-color:var(--bg1); border:1px solid var(--rule); border-radius:12px;
+  -webkit-appearance:none; appearance:none;
+  background-image:
+    linear-gradient(45deg,transparent 50%,var(--accent) 50%),
+    linear-gradient(135deg,var(--accent) 50%,transparent 50%);
+  background-position:right 19px center,right 13px center;
+  background-size:6px 6px,6px 6px; background-repeat:no-repeat;
+}
+.picker select:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.short [data-lang-body] p:last-child{margin-bottom:0}
+.short [hidden]{display:none}
+
+/* --- added: Contents --- */
+.toc{
+  background:var(--card); border:1px solid var(--rule); border-radius:16px;
+  padding:14px 20px; margin:0 0 28px;
+}
+.toc summary{
+  cursor:pointer; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent); font-weight:600;
+}
+.toc summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.toc ol{margin:14px 0 4px; padding-left:20px; font-size:15.5px; line-height:1.85}
+.toc li{margin:0 0 2px; color:var(--muted)}
+.toc a{color:var(--muted); text-decoration:none}
+.toc a:hover{color:var(--accent); text-decoration:underline}
+h3{scroll-margin-top:16px}
 </style>
 </head>
 <body>
 <main class="wrap">
-<a class="brand" href="../">Getwiy · Aqraez</a>
+<a class="brand" href="../../">Getwiy &middot; Aqraez</a>
 <h1>Privacy Policy — Aqraez</h1>
 <p class="updated"><strong>Last updated:</strong> 31 August 2026</p>
 <hr>
 <h2>In Short</h2>
 <div class="short">
 <p><em>This summary is provided in every language the app supports. The detailed policy below is written in English, which is the authoritative version — if the summary and the detailed policy differ in meaning, the English detailed policy applies.</em></p>
-<p><strong>English:</strong> Aqraez keeps everything on your phone. Your profile, quotes, favourites and streaks stay on your device — this version of the app makes no network requests at all, so there is nothing for us to receive. It shows no ads, uses no tracking, and needs no mandatory account. Uninstalling the app removes everything.</p>
-<p><strong>தமிழ்:</strong> Aqraez உங்கள் தகவல்கள் அனைத்தையும் உங்கள் போனில் மட்டுமே வைத்திருக்கிறது. உங்கள் சுயவிவரம், மேற்கோள்கள், பிடித்தவை, தொடர்கள் — அனைத்தும் உங்கள் சாதனத்திலேயே இருக்கின்றன; இந்தப் பதிப்பு எந்த நெட்வொர்க் இணைப்பையும் பயன்படுத்துவதில்லை, எனவே எங்களுக்கு வந்து சேர எதுவும் இல்லை. விளம்பரங்கள் இல்லை, கண்காணிப்பு இல்லை, கட்டாயக் கணக்கு இல்லை. ஆப்பை நீக்கினால் அனைத்தும் அழிந்துவிடும்.</p>
-<p><strong>हिन्दी:</strong> Aqraez सब कुछ आपके फ़ोन पर ही रखता है। आपकी प्रोफ़ाइल, विचार, पसंदीदा और स्ट्रीक — सब आपके डिवाइस पर ही रहते हैं; यह संस्करण कोई नेटवर्क अनुरोध नहीं करता, इसलिए हम तक पहुँचने के लिए कुछ है ही नहीं। न विज्ञापन, न ट्रैकिंग, न कोई अनिवार्य खाता। ऐप हटाने पर सब कुछ मिट जाता है।</p>
-<p><strong>తెలుగు:</strong> Aqraez అన్నింటినీ మీ ఫోన్‌లోనే ఉంచుతుంది. మీ ప్రొఫైల్, కోట్స్, ఇష్టమైనవి, స్ట్రీక్‌లు — అన్నీ మీ పరికరంలోనే ఉంటాయి; ఈ వెర్షన్ ఎలాంటి నెట్‌వర్క్ అభ్యర్థననూ చేయదు, కాబట్టి మాకు చేరేది ఏదీ లేదు. ప్రకటనలు లేవు, ట్రాకింగ్ లేదు, తప్పనిసరి ఖాతా లేదు. యాప్ తొలగిస్తే అంతా చెరిగిపోతుంది.</p>
-<p><strong>ಕನ್ನಡ:</strong> Aqraez ಎಲ್ಲವನ್ನೂ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ಇರಿಸುತ್ತದೆ. ನಿಮ್ಮ ಪ್ರೊಫೈಲ್, ಉಕ್ತಿಗಳು, ಮೆಚ್ಚಿನವು, ಸ್ಟ್ರೀಕ್‌ಗಳು — ಎಲ್ಲವೂ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಈ ಆವೃತ್ತಿ ಯಾವುದೇ ನೆಟ್‌ವರ್ಕ್ ವಿನಂತಿಯನ್ನೂ ಮಾಡುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ನಮಗೆ ತಲುಪುವಂತಹದ್ದು ಏನೂ ಇಲ್ಲ. ಜಾಹೀರಾತು ಇಲ್ಲ, ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ, ಕಡ್ಡಾಯ ಖಾತೆ ಇಲ್ಲ. ಆಪ್ ತೆಗೆದುಹಾಕಿದರೆ ಎಲ್ಲವೂ ಅಳಿಸಿಹೋಗುತ್ತದೆ.</p>
-<p><strong>മലയാളം:</strong> Aqraez എല്ലാം നിങ്ങളുടെ ഫോണിൽ തന്നെ സൂക്ഷിക്കുന്നു. നിങ്ങളുടെ പ്രൊഫൈൽ, ഉദ്ധരണികൾ, പ്രിയപ്പെട്ടവ, സ്ട്രീക്കുകൾ — എല്ലാം നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ നിലനിൽക്കുന്നു; ഈ പതിപ്പ് ഒരു നെറ്റ്‌വർക്ക് അഭ്യർത്ഥനയും നടത്തുന്നില്ല, അതിനാൽ ഞങ്ങൾക്ക് ലഭിക്കാൻ ഒന്നുമില്ല. പരസ്യങ്ങളില്ല, ട്രാക്കിംഗ് ഇല്ല, നിർബന്ധിത അക്കൗണ്ട് ഇല്ല. ആപ്പ് നീക്കം ചെയ്താൽ എല്ലാം മായ്ക്കപ്പെടും.</p>
-<p><strong>বাংলা:</strong> Aqraez সবকিছু আপনার ফোনেই রাখে। আপনার প্রোফাইল, উক্তি, প্রিয় এবং স্ট্রিক — সবই আপনার ডিভাইসেই থাকে; এই সংস্করণ কোনো নেটওয়ার্ক অনুরোধ করে না, তাই আমাদের কাছে পৌঁছানোর মতো কিছুই নেই। কোনো বিজ্ঞাপন নেই, ট্র্যাকিং নেই, বাধ্যতামূলক অ্যাকাউন্ট নেই। অ্যাপ মুছে ফেললে সবকিছু মুছে যায়।</p>
-<p><strong>অসমীয়া:</strong> Aqraez য়ে সকলো কেৱল আপোনাৰ ফোনতহে ৰাখে। আপোনাৰ প্ৰ’ফাইল, কথাবোৰ, পচন্দৰ আৰু ধাৰাবাহিকতা — সকলো আপোনাৰ ডিভাইচতেই থাকে; এই সংস্কৰণে কোনো নেটৱৰ্ক অনুৰোধ নকৰে, সেয়েহে আমাৰ ওচৰলৈ অহাৰ দৰে একোৱেই নাই। কোনো বিজ্ঞাপন নাই, কোনো ট্ৰেকিং নাই, বাধ্যতামূলক একাউণ্ট নাই। যদি আপুনি এপটো আনইনষ্টল কৰে, সকলো মচি যায়।</p>
-<p><strong>ગુજરાતી:</strong> Aqraez બધું ફક્ત તમારા ફોનમાં જ રાખે છે. તમારી પ્રોફાઇલ, વિચારો, મનપસંદ અને સિલસિલા — બધું તમારા ડિવાઇસ પર જ રહે છે; આ સંસ્કરણ કોઈ નેટવર્ક વિનંતી કરતું નથી, તેથી અમારા સુધી પહોંચે એવું કશું જ નથી. કોઈ જાહેરાત નથી, કોઈ ટ્રેકિંગ નથી, ફરજિયાત ખાતું નથી. જો તમે એપ કાઢી નાખો, તો બધું જ ભૂંસાઈ જાય છે.</p>
-<p><strong>ਪੰਜਾਬੀ:</strong> Aqraez ਸਭ ਕੁਝ ਸਿਰਫ਼ ਤੁਹਾਡੇ ਫੋਨ 'ਤੇ ਰੱਖਦਾ ਹੈ। ਤੁਹਾਡਾ ਪ੍ਰੋਫਾਈਲ, ਵਿਚਾਰ, ਪਸੰਦੀਦਾ ਅਤੇ ਲੜੀਆਂ ਸਭ ਤੁਹਾਡੇ ਡਿਵਾਈਸ 'ਤੇ ਹੀ ਰਹਿੰਦੀਆਂ ਹਨ; ਇਹ ਵਰਜ਼ਨ ਕੋਈ ਵੀ ਨੈੱਟਵਰਕ ਬੇਨਤੀ ਨਹੀਂ ਕਰਦਾ, ਇਸ ਲਈ ਸਾਡੇ ਤੱਕ ਪਹੁੰਚਣ ਵਾਲਾ ਕੁਝ ਵੀ ਨਹੀਂ ਹੈ। ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਕੋਈ ਟਰੈਕਿੰਗ ਨਹੀਂ, ਕੋਈ ਲਾਜ਼ਮੀ ਖਾਤਾ ਨਹੀਂ। ਜੇ ਤੁਸੀਂ ਐਪ ਹਟਾ ਦਿੰਦੇ ਹੋ, ਤਾਂ ਸਭ ਕੁਝ ਮਿਟ ਜਾਂਦਾ ਹੈ।</p>
-<p><strong>मराठी:</strong> Aqraez सर्व काही तुमच्याच फोनवर ठेवते. तुमचे प्रोफाइल, सुविचार, आवडते आणि सलग दिवस — सर्व तुमच्याच उपकरणावर राहतात; ही आवृत्ती कोणतीही नेटवर्क विनंती करत नाही, त्यामुळे आमच्यापर्यंत पोहोचण्यासारखे काहीच नाही. जाहिराती दाखवत नाही, ट्रॅकिंग करत नाही आणि सक्तीचे खातेही मागत नाही. ॲप काढून टाकल्यास सर्व काही निघून जाते.</p>
-<p><strong>Español:</strong> Aqraez guarda todo en tu teléfono. Tu perfil, tus frases, tus favoritos y tus rachas se quedan en tu dispositivo: esta versión de la app no hace ninguna conexión de red, así que no hay nada que podamos recibir. No muestra anuncios, no usa seguimiento y no exige ninguna cuenta. Si desinstalas la app, todo desaparece.</p>
-<p><strong>Français:</strong> Aqraez garde tout sur votre téléphone. Votre profil, vos citations, vos favoris et vos séries restent sur votre appareil : cette version de l'application n'effectue aucune requête réseau, il n'y a donc rien que nous puissions recevoir. Pas de publicité, pas de suivi, aucun compte obligatoire. Si vous désinstallez l'application, tout disparaît.</p>
-<p><strong>Português:</strong> O Aqraez guarda tudo no seu celular. Seu perfil, suas frases, suas favoritas e suas sequências ficam no seu dispositivo: esta versão do app não faz nenhuma requisição de rede, então não há nada que possamos receber. Não exibe anúncios, não usa rastreamento e não exige conta. Se você desinstalar o app, tudo é apagado.</p>
-<p><strong>Deutsch:</strong> Aqraez behält alles auf deinem Telefon. Dein Profil, deine Zitate, deine Favoriten und deine Serien bleiben auf deinem Gerät: Diese Version der App stellt keinerlei Netzwerkanfragen, es gibt also nichts, was bei uns ankommen könnte. Sie zeigt keine Werbung, nutzt kein Tracking und verlangt kein Pflichtkonto. Wenn du die App deinstallierst, ist alles weg.</p>
-<p><strong>Italiano:</strong> Aqraez conserva tutto solo sul tuo telefono. Il tuo profilo, le citazioni, i preferiti e le serie restano sul tuo dispositivo: questa versione dell'app non effettua alcuna richiesta di rete, quindi non c'è nulla che possa arrivare a noi. Non mostra pubblicità, non usa tracciamento e non richiede alcun account obbligatorio. Se disinstalli l'app, tutto scompare.</p>
-<p><strong>Türkçe:</strong> Aqraez her şeyi yalnızca telefonunda saklar. Profilin, sözlerin, favorilerin ve serilerin cihazında kalır: bu sürüm hiçbir ağ isteği yapmaz, dolayısıyla bize ulaşan hiçbir şey yoktur. Reklam göstermez, takip yapmaz ve zorunlu hesap istemez. Uygulamayı silersen, her şey kaybolur.</p>
-<p><strong>Bahasa Indonesia:</strong> Aqraez menyimpan semuanya di ponselmu. Profil, kutipan, favorit, dan runtutanmu tetap ada di perangkatmu: versi aplikasi ini tidak melakukan permintaan jaringan apa pun, jadi tidak ada yang bisa sampai ke kami. Aplikasi ini tidak menampilkan iklan, tidak memakai pelacakan, dan tidak mewajibkan akun. Menghapus aplikasi akan menghapus semuanya.</p>
-<p><strong>Русский:</strong> Aqraez хранит всё только на твоём телефоне. Твой профиль, цитаты, избранное и серии остаются на твоём устройстве: эта версия приложения не делает никаких сетевых запросов, поэтому до нас ничего не доходит. Нет рекламы, нет отслеживания, обязательный аккаунт не нужен. Если ты удалишь приложение, всё это исчезнет.</p>
-<p><strong>简体中文:</strong> Aqraez 把所有内容都留在你的手机上。你的资料、语录、收藏和连续记录都保存在你的设备中：此版本不会发起任何网络请求，因此没有任何内容会传到我们这里。应用不显示广告、不进行追踪，也不强制要求账号。卸载应用后，这些内容会全部清除。</p>
-<p><strong>日本語:</strong> Aqraez はすべてをあなたの端末の中だけに保存します。プロフィール、言葉、お気に入り、連続記録はすべて端末内にとどまります。このバージョンはネットワーク通信を一切行わないため、私たちのもとに届くものはありません。広告は表示せず、トラッキングも行わず、アカウントを必須にすることもありません。アプリを削除すれば、すべて消えます。</p>
-<p><strong>한국어:</strong> Aqraez는 모든 것을 당신의 휴대폰에만 보관해요. 프로필, 글귀, 즐겨찾기, 연속 기록은 모두 기기 안에 남아요. 이 버전은 어떤 네트워크 요청도 하지 않기 때문에, 저희에게 전달될 것이 아예 없어요. 광고를 보여주지 않고, 추적도 하지 않으며, 계정을 필수로 요구하지도 않아요. 앱을 삭제하면 모두 사라져요.</p>
+<div class="picker">
+<label for="lang">Read this summary in your language</label>
+<select id="lang" data-lang-picker>
+<option value="en">English</option>
+<option value="ta">தமிழ்</option>
+<option value="hi">हिन्दी</option>
+<option value="te">తెలుగు</option>
+<option value="kn">ಕನ್ನಡ</option>
+<option value="ml">മലയാളം</option>
+<option value="bn">বাংলা</option>
+<option value="as">অসমীয়া</option>
+<option value="gu">ગુજરાતી</option>
+<option value="pa">ਪੰਜਾਬੀ</option>
+<option value="mr">मराठी</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="pt">Português</option>
+<option value="de">Deutsch</option>
+<option value="it">Italiano</option>
+<option value="tr">Türkçe</option>
+<option value="id">Bahasa Indonesia</option>
+<option value="ru">Русский</option>
+<option value="zh-CN">简体中文</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+</select>
+</div>
+<div data-lang-body>
+<p lang="en" data-lang="en"><strong>English:</strong> Aqraez keeps everything on your phone. Your profile, quotes, favourites and streaks stay on your device — this version of the app makes no network requests at all, so there is nothing for us to receive. It shows no ads, uses no tracking, and needs no mandatory account. Uninstalling the app removes everything.</p>
+<p lang="ta" data-lang="ta"><strong>தமிழ்:</strong> Aqraez உங்கள் தகவல்கள் அனைத்தையும் உங்கள் போனில் மட்டுமே வைத்திருக்கிறது. உங்கள் சுயவிவரம், மேற்கோள்கள், பிடித்தவை, தொடர்கள் — அனைத்தும் உங்கள் சாதனத்திலேயே இருக்கின்றன; இந்தப் பதிப்பு எந்த நெட்வொர்க் இணைப்பையும் பயன்படுத்துவதில்லை, எனவே எங்களுக்கு வந்து சேர எதுவும் இல்லை. விளம்பரங்கள் இல்லை, கண்காணிப்பு இல்லை, கட்டாயக் கணக்கு இல்லை. ஆப்பை நீக்கினால் அனைத்தும் அழிந்துவிடும்.</p>
+<p lang="hi" data-lang="hi"><strong>हिन्दी:</strong> Aqraez सब कुछ आपके फ़ोन पर ही रखता है। आपकी प्रोफ़ाइल, विचार, पसंदीदा और स्ट्रीक — सब आपके डिवाइस पर ही रहते हैं; यह संस्करण कोई नेटवर्क अनुरोध नहीं करता, इसलिए हम तक पहुँचने के लिए कुछ है ही नहीं। न विज्ञापन, न ट्रैकिंग, न कोई अनिवार्य खाता। ऐप हटाने पर सब कुछ मिट जाता है।</p>
+<p lang="te" data-lang="te"><strong>తెలుగు:</strong> Aqraez అన్నింటినీ మీ ఫోన్‌లోనే ఉంచుతుంది. మీ ప్రొఫైల్, కోట్స్, ఇష్టమైనవి, స్ట్రీక్‌లు — అన్నీ మీ పరికరంలోనే ఉంటాయి; ఈ వెర్షన్ ఎలాంటి నెట్‌వర్క్ అభ్యర్థననూ చేయదు, కాబట్టి మాకు చేరేది ఏదీ లేదు. ప్రకటనలు లేవు, ట్రాకింగ్ లేదు, తప్పనిసరి ఖాతా లేదు. యాప్ తొలగిస్తే అంతా చెరిగిపోతుంది.</p>
+<p lang="kn" data-lang="kn"><strong>ಕನ್ನಡ:</strong> Aqraez ಎಲ್ಲವನ್ನೂ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ಇರಿಸುತ್ತದೆ. ನಿಮ್ಮ ಪ್ರೊಫೈಲ್, ಉಕ್ತಿಗಳು, ಮೆಚ್ಚಿನವು, ಸ್ಟ್ರೀಕ್‌ಗಳು — ಎಲ್ಲವೂ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಈ ಆವೃತ್ತಿ ಯಾವುದೇ ನೆಟ್‌ವರ್ಕ್ ವಿನಂತಿಯನ್ನೂ ಮಾಡುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ನಮಗೆ ತಲುಪುವಂತಹದ್ದು ಏನೂ ಇಲ್ಲ. ಜಾಹೀರಾತು ಇಲ್ಲ, ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ, ಕಡ್ಡಾಯ ಖಾತೆ ಇಲ್ಲ. ಆಪ್ ತೆಗೆದುಹಾಕಿದರೆ ಎಲ್ಲವೂ ಅಳಿಸಿಹೋಗುತ್ತದೆ.</p>
+<p lang="ml" data-lang="ml"><strong>മലയാളം:</strong> Aqraez എല്ലാം നിങ്ങളുടെ ഫോണിൽ തന്നെ സൂക്ഷിക്കുന്നു. നിങ്ങളുടെ പ്രൊഫൈൽ, ഉദ്ധരണികൾ, പ്രിയപ്പെട്ടവ, സ്ട്രീക്കുകൾ — എല്ലാം നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ നിലനിൽക്കുന്നു; ഈ പതിപ്പ് ഒരു നെറ്റ്‌വർക്ക് അഭ്യർത്ഥനയും നടത്തുന്നില്ല, അതിനാൽ ഞങ്ങൾക്ക് ലഭിക്കാൻ ഒന്നുമില്ല. പരസ്യങ്ങളില്ല, ട്രാക്കിംഗ് ഇല്ല, നിർബന്ധിത അക്കൗണ്ട് ഇല്ല. ആപ്പ് നീക്കം ചെയ്താൽ എല്ലാം മായ്ക്കപ്പെടും.</p>
+<p lang="bn" data-lang="bn"><strong>বাংলা:</strong> Aqraez সবকিছু আপনার ফোনেই রাখে। আপনার প্রোফাইল, উক্তি, প্রিয় এবং স্ট্রিক — সবই আপনার ডিভাইসেই থাকে; এই সংস্করণ কোনো নেটওয়ার্ক অনুরোধ করে না, তাই আমাদের কাছে পৌঁছানোর মতো কিছুই নেই। কোনো বিজ্ঞাপন নেই, ট্র্যাকিং নেই, বাধ্যতামূলক অ্যাকাউন্ট নেই। অ্যাপ মুছে ফেললে সবকিছু মুছে যায়।</p>
+<p lang="as" data-lang="as"><strong>অসমীয়া:</strong> Aqraez য়ে সকলো কেৱল আপোনাৰ ফোনতহে ৰাখে। আপোনাৰ প্ৰ’ফাইল, কথাবোৰ, পচন্দৰ আৰু ধাৰাবাহিকতা — সকলো আপোনাৰ ডিভাইচতেই থাকে; এই সংস্কৰণে কোনো নেটৱৰ্ক অনুৰোধ নকৰে, সেয়েহে আমাৰ ওচৰলৈ অহাৰ দৰে একোৱেই নাই। কোনো বিজ্ঞাপন নাই, কোনো ট্ৰেকিং নাই, বাধ্যতামূলক একাউণ্ট নাই। যদি আপুনি এপটো আনইনষ্টল কৰে, সকলো মচি যায়।</p>
+<p lang="gu" data-lang="gu"><strong>ગુજરાતી:</strong> Aqraez બધું ફક્ત તમારા ફોનમાં જ રાખે છે. તમારી પ્રોફાઇલ, વિચારો, મનપસંદ અને સિલસિલા — બધું તમારા ડિવાઇસ પર જ રહે છે; આ સંસ્કરણ કોઈ નેટવર્ક વિનંતી કરતું નથી, તેથી અમારા સુધી પહોંચે એવું કશું જ નથી. કોઈ જાહેરાત નથી, કોઈ ટ્રેકિંગ નથી, ફરજિયાત ખાતું નથી. જો તમે એપ કાઢી નાખો, તો બધું જ ભૂંસાઈ જાય છે.</p>
+<p lang="pa" data-lang="pa"><strong>ਪੰਜਾਬੀ:</strong> Aqraez ਸਭ ਕੁਝ ਸਿਰਫ਼ ਤੁਹਾਡੇ ਫੋਨ 'ਤੇ ਰੱਖਦਾ ਹੈ। ਤੁਹਾਡਾ ਪ੍ਰੋਫਾਈਲ, ਵਿਚਾਰ, ਪਸੰਦੀਦਾ ਅਤੇ ਲੜੀਆਂ ਸਭ ਤੁਹਾਡੇ ਡਿਵਾਈਸ 'ਤੇ ਹੀ ਰਹਿੰਦੀਆਂ ਹਨ; ਇਹ ਵਰਜ਼ਨ ਕੋਈ ਵੀ ਨੈੱਟਵਰਕ ਬੇਨਤੀ ਨਹੀਂ ਕਰਦਾ, ਇਸ ਲਈ ਸਾਡੇ ਤੱਕ ਪਹੁੰਚਣ ਵਾਲਾ ਕੁਝ ਵੀ ਨਹੀਂ ਹੈ। ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਕੋਈ ਟਰੈਕਿੰਗ ਨਹੀਂ, ਕੋਈ ਲਾਜ਼ਮੀ ਖਾਤਾ ਨਹੀਂ। ਜੇ ਤੁਸੀਂ ਐਪ ਹਟਾ ਦਿੰਦੇ ਹੋ, ਤਾਂ ਸਭ ਕੁਝ ਮਿਟ ਜਾਂਦਾ ਹੈ।</p>
+<p lang="mr" data-lang="mr"><strong>मराठी:</strong> Aqraez सर्व काही तुमच्याच फोनवर ठेवते. तुमचे प्रोफाइल, सुविचार, आवडते आणि सलग दिवस — सर्व तुमच्याच उपकरणावर राहतात; ही आवृत्ती कोणतीही नेटवर्क विनंती करत नाही, त्यामुळे आमच्यापर्यंत पोहोचण्यासारखे काहीच नाही. जाहिराती दाखवत नाही, ट्रॅकिंग करत नाही आणि सक्तीचे खातेही मागत नाही. ॲप काढून टाकल्यास सर्व काही निघून जाते.</p>
+<p lang="es" data-lang="es"><strong>Español:</strong> Aqraez guarda todo en tu teléfono. Tu perfil, tus frases, tus favoritos y tus rachas se quedan en tu dispositivo: esta versión de la app no hace ninguna conexión de red, así que no hay nada que podamos recibir. No muestra anuncios, no usa seguimiento y no exige ninguna cuenta. Si desinstalas la app, todo desaparece.</p>
+<p lang="fr" data-lang="fr"><strong>Français:</strong> Aqraez garde tout sur votre téléphone. Votre profil, vos citations, vos favoris et vos séries restent sur votre appareil : cette version de l'application n'effectue aucune requête réseau, il n'y a donc rien que nous puissions recevoir. Pas de publicité, pas de suivi, aucun compte obligatoire. Si vous désinstallez l'application, tout disparaît.</p>
+<p lang="pt" data-lang="pt"><strong>Português:</strong> O Aqraez guarda tudo no seu celular. Seu perfil, suas frases, suas favoritas e suas sequências ficam no seu dispositivo: esta versão do app não faz nenhuma requisição de rede, então não há nada que possamos receber. Não exibe anúncios, não usa rastreamento e não exige conta. Se você desinstalar o app, tudo é apagado.</p>
+<p lang="de" data-lang="de"><strong>Deutsch:</strong> Aqraez behält alles auf deinem Telefon. Dein Profil, deine Zitate, deine Favoriten und deine Serien bleiben auf deinem Gerät: Diese Version der App stellt keinerlei Netzwerkanfragen, es gibt also nichts, was bei uns ankommen könnte. Sie zeigt keine Werbung, nutzt kein Tracking und verlangt kein Pflichtkonto. Wenn du die App deinstallierst, ist alles weg.</p>
+<p lang="it" data-lang="it"><strong>Italiano:</strong> Aqraez conserva tutto solo sul tuo telefono. Il tuo profilo, le citazioni, i preferiti e le serie restano sul tuo dispositivo: questa versione dell'app non effettua alcuna richiesta di rete, quindi non c'è nulla che possa arrivare a noi. Non mostra pubblicità, non usa tracciamento e non richiede alcun account obbligatorio. Se disinstalli l'app, tutto scompare.</p>
+<p lang="tr" data-lang="tr"><strong>Türkçe:</strong> Aqraez her şeyi yalnızca telefonunda saklar. Profilin, sözlerin, favorilerin ve serilerin cihazında kalır: bu sürüm hiçbir ağ isteği yapmaz, dolayısıyla bize ulaşan hiçbir şey yoktur. Reklam göstermez, takip yapmaz ve zorunlu hesap istemez. Uygulamayı silersen, her şey kaybolur.</p>
+<p lang="id" data-lang="id"><strong>Bahasa Indonesia:</strong> Aqraez menyimpan semuanya di ponselmu. Profil, kutipan, favorit, dan runtutanmu tetap ada di perangkatmu: versi aplikasi ini tidak melakukan permintaan jaringan apa pun, jadi tidak ada yang bisa sampai ke kami. Aplikasi ini tidak menampilkan iklan, tidak memakai pelacakan, dan tidak mewajibkan akun. Menghapus aplikasi akan menghapus semuanya.</p>
+<p lang="ru" data-lang="ru"><strong>Русский:</strong> Aqraez хранит всё только на твоём телефоне. Твой профиль, цитаты, избранное и серии остаются на твоём устройстве: эта версия приложения не делает никаких сетевых запросов, поэтому до нас ничего не доходит. Нет рекламы, нет отслеживания, обязательный аккаунт не нужен. Если ты удалишь приложение, всё это исчезнет.</p>
+<p lang="zh-CN" data-lang="zh-CN"><strong>简体中文:</strong> Aqraez 把所有内容都留在你的手机上。你的资料、语录、收藏和连续记录都保存在你的设备中：此版本不会发起任何网络请求，因此没有任何内容会传到我们这里。应用不显示广告、不进行追踪，也不强制要求账号。卸载应用后，这些内容会全部清除。</p>
+<p lang="ja" data-lang="ja"><strong>日本語:</strong> Aqraez はすべてをあなたの端末の中だけに保存します。プロフィール、言葉、お気に入り、連続記録はすべて端末内にとどまります。このバージョンはネットワーク通信を一切行わないため、私たちのもとに届くものはありません。広告は表示せず、トラッキングも行わず、アカウントを必須にすることもありません。アプリを削除すれば、すべて消えます。</p>
+<p lang="ko" data-lang="ko"><strong>한국어:</strong> Aqraez는 모든 것을 당신의 휴대폰에만 보관해요. 프로필, 글귀, 즐겨찾기, 연속 기록은 모두 기기 안에 남아요. 이 버전은 어떤 네트워크 요청도 하지 않기 때문에, 저희에게 전달될 것이 아예 없어요. 광고를 보여주지 않고, 추적도 하지 않으며, 계정을 필수로 요구하지도 않아요. 앱을 삭제하면 모두 사라져요.</p>
+</div>
 </div>
 <hr>
 <h2>Full Privacy Policy (English — authoritative version)</h2>
+<details class="toc">
+<summary>Contents</summary>
+<ol>
+<li><a href="#section-1">Overview</a></li>
+<li><a href="#section-2">Information We Collect</a></li>
+<li><a href="#section-3">Permissions We Request</a></li>
+<li><a href="#section-4">How We Use Your Information</a></li>
+<li><a href="#section-5">How We Store and Protect Your Information</a></li>
+<li><a href="#section-6">Third-Party Services</a></li>
+<li><a href="#section-7">Sharing Content</a></li>
+<li><a href="#section-8">Notifications</a></li>
+<li><a href="#section-9">Your Rights and Choices</a></li>
+<li><a href="#section-10">Data Retention</a></li>
+<li><a href="#section-11">International Users</a></li>
+<li><a href="#section-12">Children’s Privacy</a></li>
+<li><a href="#section-13">Changes to This Policy</a></li>
+<li><a href="#section-14">Governing Law</a></li>
+<li><a href="#section-15">Contact Us</a></li>
+</ol>
+</details>
 <p>This Privacy Policy explains how Aqraez ("the App", "we", "us"), developed under the name Getwiy, handles information when you use it. Please read this policy carefully. By using Aqraez, you agree to the practices described here.</p>
-<h3>1. Overview</h3>
+<h3 id="section-1">1. Overview</h3>
 <p>Aqraez is designed to function entirely on your own device. It does not require you to create an account or sign in, and this version of the App makes no network requests of any kind — not for content, not for fonts, not for analytics. Every quote, font and image it uses is bundled inside the App itself. We operate no servers that store your personal data, and we integrate no analytics, advertising or tracking SDKs into the App.</p>
-<h3>2. Information We Collect</h3>
+<h3 id="section-2">2. Information We Collect</h3>
 <p><strong>2.1 Information you provide directly</strong></p>
-<ul><li>Profile details: your name, your age, gender, favourite authors, and preferred quote categories, entered during setup or in your Profile</li><li>A profile photo or custom theme photo, only if you choose to select one</li><li>Quotes you write yourself within the App</li><li>Your language, theme, and app icon preferences</li></ul>
+<ul>
+<li>Profile details: your name, your age, gender, favourite authors, and preferred quote categories, entered during setup or in your Profile</li>
+<li>A profile photo or custom theme photo, only if you choose to select one</li>
+<li>Quotes you write yourself within the App</li>
+<li>Your language, theme, and app icon preferences</li>
+</ul>
 <p>Every setup step that asks for information can be skipped. If you skip a step, nothing from it is stored. You can also change or clear any of these later from Settings.</p>
 <p><strong>2.2 Information generated by using the App</strong></p>
-<ul><li>Quotes you mark as favourites</li><li>Your daily usage streak and the dates you opened the App</li><li>Your Getwiy Spark promise history and streak</li><li>Achievement/badge progress</li><li>Your daily reminder time, if you set one, and whether achievement and streak notifications are switched on</li></ul>
+<ul>
+<li>Quotes you mark as favourites</li>
+<li>Your daily usage streak and the dates you opened the App</li>
+<li>Your Getwiy Spark promise history and streak</li>
+<li>Achievement/badge progress</li>
+<li>Your daily reminder time, if you set one, and whether achievement and streak notifications are switched on</li>
+</ul>
 <p>Reminders are off until you set one. You can turn a reminder off again at any time on the Daily Reminder screen, and switch achievement or streak notifications on or off under Settings &gt; Notifications.</p>
 <p><strong>2.3 Information we do not collect</strong></p>
 <p>We do not collect precise location, contacts, browsing history, device identifiers for advertising, or any information through analytics or crash-reporting services, because the App does not include any such services.</p>
-<h3>3. Permissions We Request</h3>
+<h3 id="section-3">3. Permissions We Request</h3>
 <p>Android requires apps to explicitly ask for certain permissions. Here is what Aqraez requests and why:</p>
 <p><strong>Notifications (POST_NOTIFICATIONS)</strong></p>
 <p>Used for three separate things, each of which you control on its own: your daily quote reminder, a streak reminder if you have not opened the App that day, and a message when you unlock an achievement. The daily reminder is off until you set one; the other two are switched on and off under Settings &gt; Notifications. You can also decline or revoke the permission itself at any time in your device settings, without affecting the rest of the App.</p>
@@ -126,35 +222,11 @@ footer a{color:var(--accent)}
 <p>Requested only at the moment you choose to set a profile photo or a custom background photo. Aqraez cannot access your photos at any other time, and the selected photo is stored only on your device.</p>
 <p><strong>Saving Images to Your Gallery</strong></p>
 <p>When you use the Save/Download feature on a quote image, Aqraez writes that newly created image directly into your device’s photo gallery. This uses Android’s standard "add a photo" capability, which is separate from — and narrower than — permission to read your existing photos. Aqraez does not gain any ability to browse, view, or access photos already on your device through this feature, and the saved image never leaves your device.</p>
-<h3>4. How We Use Your Information</h3>
+<h3 id="section-4">4. How We Use Your Information</h3>
 <p>Everything listed above is used solely to run the App the way you’ve configured it — showing your favourites, sending your reminder, tracking your streak, personalising your feed, and remembering your settings. We do not use your information for advertising, profiling, or any purpose beyond making the App work for you.</p>
-<h3>5. How We Store and Protect Your Information</h3>
+<h3 id="section-5">5. How We Store and Protect Your Information</h3>
 <p>All information described in this policy is stored locally on your device using standard Android app storage. It is not transmitted to Getwiy, and there is no Getwiy-operated server where this data is held — which means there is no central database of user data that could be exposed in a data breach on our end. The security of data on your device also depends on your own device’s security (such as a screen lock).</p>
-<h3>6. Third-Party Services</h3>
+<h3 id="section-6">6. Third-Party Services</h3>
 <p>Aqraez does not use any third-party analytics, advertising, or crash-reporting SDKs. The only third-party interaction is when you actively choose to share a quote: at that point, the App hands your content to your device’s built-in share function (see Section 7). We do not embed any third-party tracking code.</p>
-<h3>7. Sharing Content</h3>
-<p>If you use the Share feature, Aqraez passes your chosen quote or quote image to whichever app you select (for example WhatsApp, Instagram, or Messages) through your device’s own share function. Getwiy does not see, store, or have access to what you share or who you share it with — that exchange happens directly between your device and the app you chose.</p>
-<h3>8. Notifications</h3>
-<p>Your daily reminder and achievement notifications are scheduled and shown directly by your device’s operating system. They are not sent from, or logged by, any server.</p>
-<h3>9. Your Rights and Choices</h3>
-<p>Because your information is stored only on your device, you are always in direct control of it:</p>
-<p>• Access: you can view everything you’ve entered directly within the App at any time • Correction: you can edit your profile, quotes, and preferences at any time in Settings • Deletion: uninstalling the App permanently deletes all locally stored data described in this policy • Permissions: you can review or revoke any permission (notifications, photos, etc.) at any time in your device’s App Settings</p>
-<h3>10. Data Retention</h3>
-<p>Since data is stored only on your device, it remains there for as long as the App is installed, and is removed automatically when you uninstall the App or clear its data through your device Settings.</p>
-<h3>11. International Users</h3>
-<p>Aqraez is available worldwide. For data protection laws that require a named data controller — including the EU/EEA General Data Protection Regulation (GDPR), the UK GDPR, and India's Digital Personal Data Protection Act — that controller is Getwiy, the developer identified at the end of this policy. In practice, because the App transmits nothing off your device, we do not receive, store or process your personal data on any server, and there is no cross-border transfer of it by us. If you are in the European Economic Area, the United Kingdom, California, Brazil, or any other region with specific data protection rules, the rights those laws give you — access, correction, deletion, portability — are exercised directly on your own device, as described in Section 9, because that is the only place your data exists.</p>
-<h3>12. Children’s Privacy</h3>
-<p>Aqraez is intended for a general audience and is not directed at children. We do not knowingly collect information from children under 13 (the threshold under the United States' COPPA), nor from children under the age set by local law where that age is higher — in parts of the European Economic Area it is 16. Because the App stores everything locally and sends nothing to us, we hold no information about any user, child or adult. If you are a parent or guardian and believe a child has entered information into the App, uninstalling it removes everything stored locally; you are also welcome to contact us and we will help.</p>
-<h3>13. Changes to This Policy</h3>
-<p>We may update this Privacy Policy as the App evolves — for example, if a future version adds optional account or cloud-sync features, this policy will be updated accordingly before that feature is released, and the date at the top will change.</p>
-<h3>14. Governing Law</h3>
-<p>This Privacy Policy is governed by the laws of India, without regard to conflict-of-law principles, unless otherwise required by the laws of your country of residence.</p>
-<h3>15. Contact Us</h3>
-<p>If you have any questions about this Privacy Policy or how Aqraez handles information, contact us at: getwiy@gmail.com</p>
-<footer>
-<p>Aqraez is made by Getwiy. Questions: <a href="mailto:getwiy@gmail.com">getwiy@gmail.com</a></p>
-<p><a href="../">Back to Getwiy</a></p>
-</footer>
-</main>
-</body>
-</html>
+<h3 id="section-7">7. Sharing Content</h3>
+<p>If you use the Share feature, Aqraez passes your chosen quote or quote image to whichever app you select (for example WhatsApp, Instagram, or Messages) through your device’s own share function. Getwiy does not see, st
