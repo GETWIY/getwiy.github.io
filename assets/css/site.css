@@ -1,0 +1,429 @@
+/* ==========================================================================
+   Getwiy — site stylesheet
+   One component set, driven entirely by the theme variables in tokens.css.
+   No component hard-codes a colour, so a page cannot mix palettes.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.shell { max-width: var(--shell); margin: 0 auto; padding: 0 22px; }
+section { position: relative; }
+.band { padding: clamp(58px, 13vw, 100px) 0; }
+.band--tight { padding: clamp(38px, 8vw, 60px) 0; }
+
+/* A faint meridian grid, taken from the globe inside the logo's G. */
+.band--globe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    radial-gradient(closest-side circle at 88% 18%, var(--glow) 0%, transparent 70%);
+}
+
+/* --- Top bar: logo left, menu right --------------------------------------- */
+
+.topbar { position: relative; z-index: 20; }
+.topbar__in {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;   /* menu · logo · matching spacer */
+  align-items: center;
+  gap: 12px; padding: 14px 22px;
+}
+.topbar__logo { grid-column: 2; justify-self: center; display: block; line-height: 0; }
+.topbar__logo img {
+  display: block; width: clamp(112px, 34vw, 150px); height: auto;
+  border-radius: 9px;
+  box-shadow: 0 0 0 1px rgba(236, 200, 120, 0.16);
+}
+.menu { grid-column: 3; grid-row: 1; justify-self: end; position: relative; }
+
+/* A native disclosure menu, so it needs no JavaScript to open. */
+.menu { position: relative; flex: 0 0 auto; }
+.menu > summary {
+  list-style: none; cursor: pointer;
+  width: 42px; height: 42px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; border: 1px solid var(--card-line); border-radius: 11px;
+  background: var(--card-bg);
+  transition: border-color .25s ease, background-color .25s ease;
+}
+.menu > summary::-webkit-details-marker { display: none; }
+.menu > summary::marker { content: ""; }
+.menu > summary span {
+  display: block; width: 17px; height: 1.5px; border-radius: 2px;
+  background: var(--accent); transition: transform .25s ease, opacity .25s ease;
+}
+.menu > summary:hover, .menu[open] > summary { border-color: var(--accent); }
+.menu[open] > summary span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu[open] > summary span:nth-child(2) { opacity: 0; }
+.menu[open] > summary span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.menu > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.menu nav {
+  position: absolute; right: 0; top: calc(100% + 10px);
+  min-width: 186px;
+  display: flex; flex-direction: column;
+  padding: 8px;
+  background: var(--bg-2); border: 1px solid var(--card-line);
+  border-radius: var(--r-card);
+  box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.75);
+}
+.theme-light .menu nav { background: #FFFFFF; }
+.menu nav a {
+  padding: 11px 14px; border-radius: 10px;
+  color: var(--fg); text-decoration: none;
+  font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.menu nav a:hover, .menu nav a[aria-current="page"] {
+  background: var(--card-hover); color: var(--accent);
+}
+
+/* --- Wordmark ------------------------------------------------------------- */
+
+.wordmark {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: clamp(1.78rem, 8.1vh, 3.4rem);
+  line-height: 1; font-weight: 400; letter-spacing: 0.07em;
+  color: var(--accent);
+}
+.tagline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 4.1vw, 1.22rem);
+  line-height: 1.4; color: var(--fg-soft);
+  white-space: nowrap;
+}
+
+/* --- Hero ----------------------------------------------------------------- */
+
+.wall {
+  position: relative;
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  padding-bottom: clamp(20px, 4vh, 40px);
+  isolation: isolate;
+}
+.wall::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(130% 78% at 50% 16%, var(--bg-2) 0%, var(--bg) 62%);
+}
+.wall .topbar { z-index: 20; }
+
+.scripts {
+  position: absolute; left: 0; right: 0; top: 0; z-index: 1;
+  height: clamp(140px, 25svh, 250px);
+  display: flex; flex-wrap: wrap;
+  align-content: center; justify-content: center;
+  gap: 0.4em 1.15em; padding: 0 4vw;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 3.7vw, 1.5rem); line-height: 1.55;
+  color: var(--fg); opacity: 0.10;
+  overflow: hidden; user-select: none; pointer-events: none;
+}
+
+/* The travelling light. Only rendered on the dark theme: `screen` over a
+   pale background is a no-op, which is why it vanished in the last build. */
+.torch { display: none; }
+.theme-dark .torch {
+  display: block;
+  position: fixed; inset: 0; z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle 40vmax at var(--lx, 46%) var(--ly, 26%),
+              rgba(236, 200, 120, 0.26) 0%,
+              rgba(236, 200, 120, 0.10) 32%,
+              transparent 62%);
+}
+
+.hero {
+  position: relative; z-index: 3; width: 100%;
+  flex: 1 1 auto;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-top: clamp(6px, 1.5vh, 14px);
+  padding-bottom: clamp(26px, 8vh, 80px);   /* lifts the group up the screen */
+}
+.hero__mark { text-align: center; }
+.hero__welcome { margin-top: clamp(16px, 3.4vh, 34px); }
+.hero__welcome h2 { text-align: center; margin-bottom: 16px; }
+
+/* --- Type ----------------------------------------------------------------- */
+
+h1 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 7.6vw, 2.7rem);
+  line-height: 1.16; font-weight: 400; letter-spacing: -0.014em;
+}
+h2 {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5.8vw, 2.05rem);
+  line-height: 1.24; font-weight: 400; letter-spacing: -0.012em;
+}
+h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; color: var(--fg); }
+p { margin: 0 0 16px; }
+.lede {
+  font-family: var(--font-display);
+  font-size: clamp(1.16rem, 4.7vw, 1.42rem); line-height: 1.5;
+}
+.muted { color: var(--fg-soft); }
+
+/* Section number, editorial style. */
+.eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 0 14px;
+  font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase;
+  font-weight: 700; color: var(--accent);
+}
+.eyebrow::after {
+  content: ""; flex: 1 1 auto; height: 1px; background: var(--line);
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* --- Pull quote ----------------------------------------------------------- */
+
+.hero .voice {
+  font-size: clamp(1.04rem, 2.35vh, 1.38rem);
+  line-height: 1.52;
+  margin-bottom: 0;
+}
+.voice {
+  position: relative;
+  margin: 0 0 24px; padding: 4px 0 4px 26px;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.14rem, 4.5vw, 1.34rem); line-height: 1.54;
+}
+.voice p:last-child { margin-bottom: 0; }
+
+/* --- Cards ---------------------------------------------------------------- */
+
+.cards { display: grid; gap: 14px; margin: 26px 0 0; }
+@media (min-width: 640px) { .cards--2 { grid-template-columns: 1fr 1fr; } }
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: var(--r-card);
+  padding: 24px 24px 22px;
+  transition: background-color .28s ease, border-color .28s ease, transform .28s ease;
+}
+.card::before {
+  content: ""; position: absolute; left: 24px; right: 24px; top: -1px; height: 1px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  opacity: 0; transition: opacity .28s ease;
+}
+.card:hover { background: var(--card-hover); border-color: var(--accent-2); transform: translateY(-2px); }
+.card:hover::before { opacity: .85; }
+.card p:last-child { margin-bottom: 0; }
+.card--soon { opacity: .58; }
+.card--soon:hover { transform: none; }
+
+.card__icon {
+  width: 30px; height: 30px; margin-bottom: 14px;
+  color: var(--accent); display: block;
+}
+.card__icon svg { width: 100%; height: 100%; display: block; }
+
+/* --- Letter grid (G W I Y / A Q Ra E Z) ----------------------------------- */
+
+.grid-letters { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 0; }
+.grid-letters div {
+  border: 1px solid var(--card-line); border-radius: var(--r-card);
+  background: var(--card-bg); padding: 20px 18px;
+}
+.grid-letters b {
+  display: block; font-family: var(--font-display);
+  font-size: clamp(1.45rem, 6.2vw, 1.95rem); line-height: 1.05;
+  font-weight: 400; color: var(--accent); letter-spacing: .02em;
+  margin-bottom: 8px;
+}
+.grid-letters span { color: var(--fg-soft); font-size: 15px; }
+
+/* --- Facts ---------------------------------------------------------------- */
+
+.facts {
+  margin: 26px 0 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--card-line);
+  border: 1px solid var(--card-line); border-radius: var(--r-card); overflow: hidden;
+}
+@media (min-width: 640px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+.facts li { background: var(--bg); padding: 20px 16px; }
+.facts b {
+  display: block; font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 400; line-height: 1.05; color: var(--accent);
+}
+.facts span {
+  display: block; margin-top: 5px;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-soft);
+}
+
+/* --- Language marquee ------------------------------------------------------ */
+
+.marquee {
+  margin: 26px 0 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 16px 0; overflow: hidden;
+  -webkit-mask-image: none;
+}
+.marquee__track {
+  display: flex; gap: 10px; width: max-content;
+  animation: slide 46s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee span {
+  flex: 0 0 auto;
+  padding: 7px 16px; border: 1px solid var(--card-line); border-radius: var(--r-pill);
+  background: var(--card-bg); color: var(--fg-soft); font-size: 15px; white-space: nowrap;
+}
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* --- Portrait -------------------------------------------------------------- */
+
+.who { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+.who img {
+  width: 108px; height: 108px; flex: 0 0 auto;
+  border-radius: 50%; object-fit: cover;
+  border: 1px solid var(--card-line);
+}
+.who > div { flex: 1 1 260px; min-width: 0; }
+
+/* --- Buttons --------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px; border-radius: var(--r-pill);
+  font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid var(--accent-2); color: var(--accent);
+  transition: background-color .28s ease, border-color .28s ease;
+}
+.btn:hover, .btn:focus-visible { background: var(--glow); border-color: var(--accent); }
+.btn--solid { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
+.btn--solid:hover { opacity: .88; background: var(--accent); }
+.btn--still { cursor: default; opacity: .7; }
+.btn i { font-style: normal; animation: nudge 2.6s ease-in-out infinite; }
+@keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+
+/* --- Footer ---------------------------------------------------------------- */
+
+.foot { padding: 40px 0 60px; border-top: 1px solid var(--line); font-size: 14.5px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 16px; }
+.foot p { margin: 0 0 6px; color: var(--fg-soft); }
+.foot__sig { font-family: var(--font-display); font-size: 15.5px; color: var(--fg-faint); }
+
+/* --- Motion ---------------------------------------------------------------- */
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.wordmark, .tagline, .hero__welcome, .hero .lede, .hero .btn, .hero h1, .hero .muted {
+  opacity: 0; animation: rise .74s cubic-bezier(.22,.8,.3,1) forwards;
+}
+.wordmark, .hero h1     { animation-delay: .05s; }
+.tagline                { animation-delay: .18s; }
+.hero__welcome          { animation-delay: .34s; }
+.hero .lede             { animation-delay: .34s; }
+.hero .muted            { animation-delay: .52s; }
+.hero .btn              { animation-delay: .90s; }
+
+/* Scroll reveal. Only armed once JS confirms it can disarm it, so the page
+   is never left invisible if the script fails. */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn i, .marquee__track { animation: none; }
+  .wordmark, .tagline, .hero__welcome, .hero .lede, .hero .btn, .hero h1, .hero .muted { opacity: 1; animation: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* --- Numbered process ------------------------------------------------------ */
+
+.steps { display: grid; gap: 12px; margin: 26px 0 0; counter-reset: step; }
+.step {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 22px 24px;
+  border: 1px solid var(--card-line); border-radius: var(--r-card);
+  background: var(--card-bg);
+}
+.step__n {
+  flex: 0 0 auto; counter-increment: step;
+  font-family: var(--font-display); font-size: 1.5rem; line-height: 1;
+  color: var(--accent); min-width: 1.6em;
+}
+.step__n::before { content: counter(step, decimal-leading-zero); }
+.step h3 { margin-bottom: 4px; }
+.step p { margin: 0; color: var(--fg-soft); }
+
+/* --- What a service includes ----------------------------------------------- */
+
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; }
+.tags li {
+  padding: 5px 12px; border: 1px solid var(--card-line); border-radius: var(--r-pill);
+  font-size: 12.5px; color: var(--fg-soft);
+}
+
+/* --- Featured product ------------------------------------------------------- */
+
+.feature {
+  border: 1px solid var(--card-line); border-radius: var(--r-card);
+  background: var(--card-bg); padding: clamp(24px, 5.5vw, 38px);
+  margin: 26px 0 0;
+}
+.feature__top { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.feature__top .card__icon { margin: 0; width: 34px; height: 34px; }
+.feature h3 { margin: 0; font-size: 1.28rem; font-weight: 650; }
+.feature__meta {
+  margin: 0; font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent);
+}
+.feature .facts { margin-top: 20px; }
+.feature__links { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+
+/* --- FAQ -------------------------------------------------------------------- */
+
+.faq { display: grid; gap: 10px; margin: 26px 0 0; }
+.faq details {
+  border: 1px solid var(--card-line); border-radius: var(--r-card);
+  background: var(--card-bg); padding: 16px 20px;
+}
+.faq summary {
+  cursor: pointer; list-style: none;
+  font-weight: 650; font-size: 1rem; color: var(--fg);
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::marker { content: ""; }
+.faq summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; line-height: 1; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { margin: 12px 0 0; color: var(--fg-soft); }
+
+/* --- Closing call to action -------------------------------------------------- */
+
+.cta {
+  margin: 26px 0 0; padding: clamp(28px, 6.5vw, 48px) clamp(22px, 5vw, 40px);
+  border: 1px solid var(--card-line); border-radius: var(--r-card);
+  background: var(--card-bg); text-align: center;
+}
+.cta h2 { margin-bottom: 12px; }
+.cta p { color: var(--fg-soft); max-width: 46ch; margin-left: auto; margin-right: auto; }
+
