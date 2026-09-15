@@ -229,4 +229,61 @@ h3{scroll-margin-top:16px}
 <h3 id="section-6">6. Third-Party Services</h3>
 <p>Aqraez does not use any third-party analytics, advertising, or crash-reporting SDKs. The only third-party interaction is when you actively choose to share a quote: at that point, the App hands your content to your device’s built-in share function (see Section 7). We do not embed any third-party tracking code.</p>
 <h3 id="section-7">7. Sharing Content</h3>
-<p>If you use the Share feature, Aqraez passes your chosen quote or quote image to whichever app you select (for example WhatsApp, Instagram, or Messages) through your device’s own share function. Getwiy does not see, st
+<p>If you use the Share feature, Aqraez passes your chosen quote or quote image to whichever app you select (for example WhatsApp, Instagram, or Messages) through your device’s own share function. Getwiy does not see, store, or have access to what you share or who you share it with — that exchange happens directly between your device and the app you chose.</p>
+<h3 id="section-8">8. Notifications</h3>
+<p>Your daily reminder and achievement notifications are scheduled and shown directly by your device’s operating system. They are not sent from, or logged by, any server.</p>
+<h3 id="section-9">9. Your Rights and Choices</h3>
+<p>Because your information is stored only on your device, you are always in direct control of it:</p>
+<ul>
+<li>Access: you can view everything you’ve entered directly within the App at any time</li>
+<li>Correction: you can edit your profile, quotes, and preferences at any time in Settings</li>
+<li>Deletion: uninstalling the App permanently deletes all locally stored data described in this policy</li>
+<li>Permissions: you can review or revoke any permission (notifications, photos, etc.) at any time in your device’s App Settings</li>
+</ul>
+<h3 id="section-10">10. Data Retention</h3>
+<p>Since data is stored only on your device, it remains there for as long as the App is installed, and is removed automatically when you uninstall the App or clear its data through your device Settings.</p>
+<h3 id="section-11">11. International Users</h3>
+<p>Aqraez is available worldwide. For data protection laws that require a named data controller — including the EU/EEA General Data Protection Regulation (GDPR), the UK GDPR, and India's Digital Personal Data Protection Act — that controller is Getwiy, the developer identified at the end of this policy. In practice, because the App transmits nothing off your device, we do not receive, store or process your personal data on any server, and there is no cross-border transfer of it by us. If you are in the European Economic Area, the United Kingdom, California, Brazil, or any other region with specific data protection rules, the rights those laws give you — access, correction, deletion, portability — are exercised directly on your own device, as described in Section 9, because that is the only place your data exists.</p>
+<h3 id="section-12">12. Children’s Privacy</h3>
+<p>Aqraez is intended for a general audience and is not directed at children. We do not knowingly collect information from children under 13 (the threshold under the United States' COPPA), nor from children under the age set by local law where that age is higher — in parts of the European Economic Area it is 16. Because the App stores everything locally and sends nothing to us, we hold no information about any user, child or adult. If you are a parent or guardian and believe a child has entered information into the App, uninstalling it removes everything stored locally; you are also welcome to contact us and we will help.</p>
+<h3 id="section-13">13. Changes to This Policy</h3>
+<p>We may update this Privacy Policy as the App evolves — for example, if a future version adds optional account or cloud-sync features, this policy will be updated accordingly before that feature is released, and the date at the top will change.</p>
+<h3 id="section-14">14. Governing Law</h3>
+<p>This Privacy Policy is governed by the laws of India, without regard to conflict-of-law principles, unless otherwise required by the laws of your country of residence.</p>
+<h3 id="section-15">15. Contact Us</h3>
+<p>If you have any questions about this Privacy Policy or how Aqraez handles information, contact us at: <a href="mailto:getwiy@gmail.com">getwiy@gmail.com</a></p>
+<footer>
+<p>Aqraez is made by Getwiy. Questions: <a href="mailto:getwiy@gmail.com">getwiy@gmail.com</a></p>
+<p><a href="../terms/">Terms &amp; Conditions</a> &middot; <a href="../../">Back to Getwiy</a></p>
+</footer>
+</main>
+<script>
+(function(){
+  var sel=document.querySelector('[data-lang-picker]');
+  var body=document.querySelector('[data-lang-body]');
+  if(!sel||!body)return;
+  var paras=body.querySelectorAll('p[data-lang]');
+  if(!paras.length)return;
+  function show(code){
+    for(var i=0;i<paras.length;i++){
+      paras[i].hidden=(paras[i].getAttribute('data-lang')!==code);
+    }
+  }
+  var have={};
+  for(var i=0;i<paras.length;i++)have[paras[i].getAttribute('data-lang')]=true;
+  var want='en';
+  var prefs=navigator.languages||[navigator.language||'en'];
+  for(var j=0;j<prefs.length;j++){
+    var p=String(prefs[j]);
+    if(have[p]){want=p;break;}
+    var base=p.split('-')[0];
+    if(have[base]){want=base;break;}
+  }
+  sel.value=want;
+  if(sel.value!==want)sel.value='en';
+  show(sel.value);
+  sel.addEventListener('change',function(){show(sel.value);});
+})();
+</script>
+</body>
+</html>
